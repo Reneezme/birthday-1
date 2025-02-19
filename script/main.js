@@ -303,12 +303,14 @@ const animationTimeline = () => {
     if (typeof window.isPlaying === "undefined") {
       window.audio.pause();
       window.isPlaying = false;
+      window.audio.currentTime = 0;
       playBtn.innerText = "▶️ Pake laguu :D";
   }
 
   // Toggle status
   window.audio.pause();
       window.isPlaying = false;
+      window.audio.currentTime = 0;
       playBtn.innerText = "▶️ Pake laguu :D";
     tl.restart();
   });
