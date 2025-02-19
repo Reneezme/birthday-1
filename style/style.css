@@ -7,6 +7,27 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+#playPauseBtn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background: #03b2e7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  z-index: 9999; /* Paling atas */
+}
+
+.specialz {
+  max-width: 100%; 
+    height: auto;    
+    display: block;   
+    object-fit: cover;
+}
+
 .container {
   height: 100vh;
   width: 100vh;

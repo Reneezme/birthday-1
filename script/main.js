@@ -299,9 +299,35 @@ const animationTimeline = () => {
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
+    playBtn = document.getElementById("playPauseBtn")
+    if (typeof window.isPlaying === "undefined") {
+      window.audio.pause();
+      window.isPlaying = false;
+      playBtn.innerText = "▶️ Pake laguu :D";
+  }
+
+  // Toggle status
+  window.audio.pause();
+      window.isPlaying = false;
+      playBtn.innerText = "▶️ Pake laguu :D";
     tl.restart();
   });
 };
+
+window.isPlaying = false; // Jadikan global
+
+window.audio = new Audio("song.mp3"); // Audio juga global
+
+document.getElementById("playPauseBtn").addEventListener("click", function () {
+    if (window.isPlaying) {
+        window.audio.pause();
+        this.innerText = "▶️ Pake laguu :D";
+    } else {
+        window.audio.play().catch(error => console.error("Gagal play lagu:", error));
+        this.innerText = "⏸ Berisik :(";
+    }
+    window.isPlaying = !window.isPlaying;
+});
 
 // Run fetch and animation in sequence
 fetchData();
